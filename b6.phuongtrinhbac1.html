@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+<font color="blue" style="position: absolute;left: 100px;top: 0px">PHUONG TRINH BAC NHAT: Ax + B =0</font><br><br><br>
+    Nhap a:
+    <input id="a" type="number" style="color: blue"><br><br>
+    Nhap b:
+    <input id="b" type="number" style="color: blue"><br><br>
+    <input onclick="tinh()" type="button" value="onclick" style="position: absolute; left: 100px; color: blue;width: 100px ; height: 50px"><br><br>
+    <script>
+        function tinh() {
+            let a=parseInt(document.getElementById("a").value)
+            let b=parseInt(document.getElementById("b").value)
+            if (a==0){
+                if (b==0){
+                    document.getElementById("rs").innerHTML="Phuong trinh co vo so nghiem"
+                } else {
+                    document.getElementById("rs").innerHTML="Phuong trinh vo nghiem"
+                }
+            } else {
+                x=-b/a;
+                document.getElementById("rs").innerHTML="phuong chinh co nghiem x=  "+x
+            }
+        }
+    </script>
+    <p style="position: absolute ; left: 100px ;color: crimson">Ket Qua</p><br><br>
+    <p style="position: absolute; left: 50px ;color: crimson" id="rs"></p>
+
+</form>
+
+</body>
+</html>

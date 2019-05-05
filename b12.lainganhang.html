@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    So tien gui:
+    <input type="number" id="tien"><br><br>
+    lai suat hang thang (%);
+    <input type="number" id="lai"><br><br>
+    so thang gui:
+    <input type="number" id="thang"><br><br>
+    <input type="button" value="onclick" onclick="tinh()"><br><br>
+    <script>
+        function tinh() {
+            let tien=parseInt(document.getElementById("tien").value)
+            let lai=parseFloat(document.getElementById("lai").value)
+            let thang=parseInt(document.getElementById("thang").value)
+            if (tien>0 && lai>0 && thang>0){
+                tong= tien * Math.pow((1+(lai/100)),thang)
+                document.getElementById("rs").innerHTML= "tong ca von lan lai la:  " +tong
+            }else {
+                document.getElementById("rs").innerHTML="so ban nhap vao k phai so duong"
+            }
+
+        }
+
+    </script>
+    <p>Ket Qua:</p><br><br>
+    <p id="rs"></p>
+</form>
+</body>
+</html>

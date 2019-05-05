@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhap gia tri canh:
+    <input id="canh" type="number">
+    <input type="button" onclick="tinh()" value="onclick"><br>
+    <script>
+        function tinh() {
+            let a=parseInt(document.getElementById("canh").value)
+            if (a>0){
+                s=a*a;
+                document.getElementById("rs").innerHTML="dien tich hinh vuong =  "+s
+            } else {
+                document.getElementById("rs").innerHTML="du lieu nhap vao khong phai so duong"
+            }
+        }
+    </script>
+    Ket qua:
+    <p id="rs">
+</form>
+
+</body>
+</html>

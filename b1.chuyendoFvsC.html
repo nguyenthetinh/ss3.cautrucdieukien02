@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let chondo=prompt("nhap ten do can chuyen (nhap F hoac C)");
+    switch (chondo) {
+        case "F":
+            f=parseFloat(prompt("nhap do F ="))
+            c=(f-32)*5/9
+            alert("do C =  " +c)
+            break;
+        case  "C":
+            c=parseFloat(prompt("nhap do C ="));
+            f=c*9/5 +32;
+            alert("do F= " + f)
+            break;
+        default: alert("Ban nhap sai ten do can chuyen ban hay nhap F hoac C")
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhap tien luong:
+    <input id="luong" type="number">(VND)</input>
+    <input type="button" onclick="ketqua()" value="onclick">
+    <p>15% thuế thu nhập nếu lương là tren 15 triệu</p>
+    <p>10% thuế thu nhập nếu lương từ 7 đến 15 triệu</p>
+    <p>5% thuế thu nhập nếu lương dưới 7 triệu</p>
+    <script>
+        function ketqua() {
+            let luong=parseInt(document.getElementById("luong").value)
+            if (luong<7000000){
+                thue=luong*5/100
+                document.getElementById("rs").innerHTML="thue phai dong la: " +thue + " VND"
+            }else if(luong<=15000000){
+                thue=luong*10/100
+                document.getElementById("rs").innerHTML="thue phai dong la: " +thue + " VND"
+            }else {
+                thue=luong*15/100
+                document.getElementById("rs").innerHTML="thue phai dong la: " +thue + " VND"
+            }
+        }
+    </script>
+    <font>KET QUA</font><br><br>
+    <font id="rs"></font>
+</form>
+
+</body>
+</html>

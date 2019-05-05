@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <font color="blue" style="position: absolute;left: 100px;top: 0px">PHUONG TRINH BAC NHAT: Ax + B =0</font><br><br><br>
+    Nhap a:
+    <input id="a" type="number" style="color: blue"><br><br>
+    Nhap b:
+    <input id="b" type="number" style="color: blue"><br><br>
+    Nhap c:
+    <input id="c" style="color: blue" type="number"><br><br>
+    <input onclick="tinh()" type="button" value="onclick" style="position: absolute; left: 100px; color: blue;width: 100px ; height: 50px"><br><br>
+    <script>
+        function tinh() {
+            let a=parseInt(document.getElementById("a").value)
+            let b=parseInt(document.getElementById("b").value)
+            let c=parseInt(document.getElementById("c").value)
+            delta = b * b - 4 * a * c
+            if (a==0){
+                if (b==0){
+                    if (c==0) {
+                        document.getElementById("rs").innerHTML="Phuong trinh vo so nghiem"
+                    }else {
+                        document.getElementById("rs").innerHTML="Phuong trinh vo nghiem"
+                    }
+                } else {
+                    x1=-b/c
+                    document.getElementById("rs").innerHTML="Phuong trinh co nghiem kep x="+x1
+                }
+            } else {
+                if (delta==0){
+                    x1=-b/(2*a)
+                    document.getElementById("rs").innerHTML="phuong trinh co nghiem kep x=  "+x1
+                }else {
+                    if (delta<0){
+                        document.getElementById("rs").innerHTML="Phuong trinh vo nghiem"
+                    }else {
+                        x1= (-b + Math.sqrt(delta))/(2*a)
+                        x2= (-b - Math.sqrt(delta))/(2*a)
+                        document.getElementById("rs").innerHTML="phuong trinh co 2 nghiem:  x1 =  "+x1 +" ;    x2=  "+x2
+                    }
+                }
+            }
+
+
+        }
+    </script>
+    <p style="position: absolute ; left: 100px ;color: crimson">Ket Qua</p><br><br>
+    <p style="position: absolute; left: 50px ;color: crimson" id="rs"></p>
+
+</form>
+</body>
+</html>

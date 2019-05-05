@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhap chieu dai:<br><br>
+    <input type="number" id="dai"><br><br>
+    nhap chieu rong:<br><br>
+    <input type="number" id="rong"><br><br>
+    <input type="button" onclick="tinh()" value="onclick">
+    <script>
+        function tinh() {
+            let a=parseInt(document.getElementById("dai").value)
+            let b=parseInt(document.getElementById("rong").value)
+            if (a>0 && b>0){
+                s=a*b;
+                document.getElementById("rs").innerHTML="dien tich hinh chu nhat=  "+s
+
+            } else {
+                document.getElementById("rs").innerHTML="du lieu nhap vao khong phai so duong"
+            }
+        }
+    </script>
+    Ket Qua:
+    <p id="rs"></p>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <font>Nhap so dien</font><br><br>
+    So moi:
+    <input type="number" id="somoi"><br><br>
+    So cu: 
+    <input type="number" id="socu"><br><br>
+    <input type="button" value="onclick" onclick="ketqua()"/><br><br>
+    <font>Biết rằng 100 kWh đầu giá 1000, từ kWh 101 – 150 giá 1200, từ kWh 151 – 200 giá 2000, từ 201 trở lên giá 2500.</font><br><br>
+    <script>
+        function ketqua() {
+            let moi=parseInt(document.getElementById("somoi").value)
+            let cu=parseInt(document.getElementById("socu").value)
+            tt=moi-cu;
+
+            if (tt>100){
+                if (tt>150){
+                    if (tt>200){
+                        kq=tt*2500
+                        document.getElementById("dadung").innerHTML="so dien tieu thu: "+tt + " So"
+                        document.getElementById("rs").innerHTML="so tien phai tra: " + kq + " (VND)"
+                    } else {
+                        kq=tt*2000
+                        document.getElementById("dadung").innerHTML="so dien tieu thu: "+tt + " So"
+                        document.getElementById("rs").innerHTML="so tien phai tra: " + kq + " (VND)"
+                    }
+
+                }else {
+                    kq=tt*1200
+                    document.getElementById("dadung").innerHTML="so dien tieu thu: "+tt + " So"
+                    document.getElementById("rs").innerHTML="so tien phai tra: " + kq + " (VND)"
+                }
+            } else {
+                kq=tt*1000
+                document.getElementById("dadung").innerHTML="so dien tieu thu: "+tt + " So"
+                document.getElementById("rs").innerHTML="so tien phai tra: " + kq + " (VND)"
+            }
+        }
+    </script>
+    <font>KET QUA</font><br><br>
+    <font id="dadung"></font><br><br>
+    <font id="rs"></font>
+</form>
+
+</body>
+</html>

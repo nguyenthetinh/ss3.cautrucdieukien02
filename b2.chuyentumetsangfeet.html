@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhap gia tri:
+<input id="gt" type="number"/><br><br>
+Chuyen tu
+<select id="tt">
+    <option value="met">met</option>
+    <option value="feet">feet</option>
+</select>
+ sang
+<select id="gg">
+    <option value="met">met</option>
+    <option value="feet">feet</option>
+</select>
+<button type="button" value="onclick" onclick="chuyen()">onclick</button><br><br>
+<script>
+    function chuyen() {
+        let x=parseFloat(document.getElementById("gt").value)
+        let tt=document.getElementById("tt").value
+        let gg=document.getElementById("gg").value
+
+        if (tt === "met" && gg === "feet") {
+            kq = x * 3.2880
+            document.getElementById("rs").innerHTML= "feet=  "+kq
+        }else if (tt === "feet" && gg === "met"){
+            kq = x/3.2880
+            document.getElementById("rs").innerHTML= "met=  "+kq
+        } else if (tt === "met" && gg === "met"){
+            kq=x
+            document.getElementById("rs").innerHTML="met=  "+kq
+        } else {
+            kq=x
+            document.getElementById("rs").innerHTML="feet=  "+kq
+        }
+
+    }
+</script>
+Ket Qua:
+<p id="rs"></p>
+
+</body>
+</html>
